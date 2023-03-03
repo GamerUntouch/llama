@@ -62,7 +62,7 @@ def generate_model(ckpt_dir: str, tokenizer_path: str, temperature: float, top_p
     print(max_output)
     generator = load_model(ckpt_dir, tokenizer_path, local_rank, world_size)
     prompts = ["test","test"]
-    results = generator.generate(prompt, max_gen_len=64, temperature=temperature, top_p=top_p)
+    results = generator.generate(prompts, max_gen_len=64, temperature=temperature, top_p=top_p)
 
     for result in results:
         print(result)
