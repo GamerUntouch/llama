@@ -58,9 +58,9 @@ def generate_model(ckpt_dir: str, tokenizer_path: str, temperature: float, top_p
     local_rank, world_size = setup_model_parallel()
     if local_rank > 0:
         sys.stdout = open(os.devnull, 'w')
-
+print(prompt)
     generator = load_model(ckpt_dir, tokenizer_path, local_rank, world_size)
-    prompts = [prompt]
+    prompts = ["test","test"]
     results = generator.generate(prompt, max_gen_len=max_output, temperature=temperature, top_p=top_p)
 
     for result in results:
