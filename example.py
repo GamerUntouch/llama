@@ -41,7 +41,7 @@ def load_model(ckpt_dir: str, tokenizer_path: str, local_rank: int, world_size: 
     with open(Path(ckpt_dir) / "params.json", "r") as f:
         params = json.loads(f.read())
 
-    model_args: ModelArgs = ModelArgs(max_seq_len=2048, max_batch_size=32, **params)
+    model_args: ModelArgs = ModelArgs(max_seq_len=2048, max_batch_size=8, **params)
     tokenizer = Tokenizer(model_path=tokenizer_path)
     model_args.vocab_size = tokenizer.n_words
     torch.set_default_tensor_type(torch.cuda.HalfTensor)
