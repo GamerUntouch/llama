@@ -54,9 +54,11 @@ def load_model(ckpt_dir: str, tokenizer_path: str, local_rank: int, world_size: 
     return generator
 
 
-def generate_model(ckpt_dir: str, tokenizer_path: str, temperature: float, top_p: float, max_output: int, prompt: str, first_load: int):
+def generate_model(ckpt_dir: str, tokenizer_path: str, temperature: float, top_p: float, max_output: int, first_load: int):
 
-    print(first_load)
+
+    prompt = Path('llama/prompt.txt').read_text()
+    print(prompt)
 
     if (first_load == 0):
         local_rank, world_size = setup_model_parallel()
