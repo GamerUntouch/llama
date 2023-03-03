@@ -57,7 +57,7 @@ def load_model(ckpt_dir: str, tokenizer_path: str, local_rank: int, world_size: 
 def generate_model(ckpt_dir: str, tokenizer_path: str, temperature: float, top_p: float, max_output: int):
 
 
-    prompt =  open('llama/prompt.txt','r').read()
+    prompt =  open('drive/MyDrive/llama/prompt.txt','r').read()
     print(prompt)
 
 
