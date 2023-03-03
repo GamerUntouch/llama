@@ -8,6 +8,7 @@ import torch
 import fire
 import time
 import json
+import random
 
 from pathlib import Path
 
@@ -25,7 +26,7 @@ def setup_model_parallel() -> Tuple[int, int]:
     torch.cuda.set_device(local_rank)
 
     # seed must be the same in all processes
-    torch.manual_seed(1)
+    torch.manual_seed(random.randrange(1,65,536))
     return local_rank, world_size
 
 
