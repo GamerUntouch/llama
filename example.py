@@ -55,7 +55,7 @@ def load_model(ckpt_dir: str, tokenizer_path: str, local_rank: int, world_size: 
     return generator
 
 
-def generate_model(temperature_: float, top_p_: float, max_output: int):
+def generate_model(generator: LLaMa, temperature_: float, top_p_: float, max_output: int):
 
     print(temperature_)
     print(top_p_)
