@@ -15,7 +15,8 @@ from pathlib import Path
 from fairscale.nn.model_parallel.initialize import initialize_model_parallel
 
 from llama.llama import ModelArgs, Transformer, Tokenizer, LLaMA
-
+from llama.llama.tokenizer import Tokenizer
+from llama.llama.model import Transformer
 
 def setup_model_parallel() -> Tuple[int, int]:
     local_rank = 0#int(os.environ.get("LOCAL_RANK", -1))
