@@ -16,6 +16,10 @@ from fairscale.nn.model_parallel.layers import (
     ColumnParallelLinear,
 )
 
+class LLaMA:
+    def __init__(self, model: Transformer, tokenizer: Tokenizer):
+        self.model = model
+        self.tokenizer = tokenizer
 
 @dataclass
 class ModelArgs:
