@@ -15,8 +15,6 @@ from pathlib import Path
 from fairscale.nn.model_parallel.initialize import initialize_model_parallel
 
 from llama.llama import ModelArgs, Transformer, Tokenizer, LLaMA
-from llama.llama.tokenizer import Tokenizer
-from llama.llama.model import Transformer
 
 def setup_model_parallel() -> Tuple[int, int]:
     local_rank = 0#int(os.environ.get("LOCAL_RANK", -1))
@@ -56,7 +54,7 @@ def load_model(ckpt_dir: str, tokenizer_path: str, local_rank: int, world_size: 
     return generator
 
 
-def generate_model(generator: LLaMa, temperature_: float, top_p_: float, max_output: int):
+def generate_model(generator, temperature_: float, top_p_: float, max_output: int):
 
     print(temperature_)
     print(top_p_)
