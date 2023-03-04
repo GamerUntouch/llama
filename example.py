@@ -62,7 +62,8 @@ def generate_model(generator, temperature_: float, top_p_: float, max_output: in
 
     prompt =  open('drive/MyDrive/llama/prompt.txt','r').read()
     print(prompt)
-        
+    print("\n==================================\n")
+    
     prompts = [prompt]
     results = generator.generate(prompts, max_gen_len=max_output, temperature=temperature_, top_p=top_p_)
 
